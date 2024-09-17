@@ -778,7 +778,7 @@ Class.switcheroo2 = {
                 store.switcheroo2_i++;
                 store.switcheroo2_i %= 6;
                 body.define(Class.overseer.UPGRADES_TIER_3[store.switcheroo2_i]);
-                setTimeout(() => body.define("switcheroo"), 6000);
+                setTimeout(() => body.define("switcheroo2"), 6000);
             }
         }
     ],
@@ -793,6 +793,148 @@ Class.switcheroo2 = {
     }]
 }
 
+Class.morph1 = {
+    PARENT: "basic",
+    LABEL: 'Morph test',
+    UPGRADES_TIER_0: [],
+    ON: [
+        {
+            event: "altFire",
+            handler: ({ body, globalMasterStore: store, gun }) => {
+                if (gun.identifier != 'switcherooGun') return
+                setTimeout(() => body.define("morph2"), 0);
+            }
+        }
+    ],
+    GUNS: [{
+        POSITION: {},
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: 'bullet',
+            IDENTIFIER: 'switcherooGun',
+            ALT_FIRE: true
+        }
+    }]
+}
+Class.morph2 = {
+    PARENT: "basic",
+    LABEL: 'Morph test',
+    UPGRADES_TIER_0: [],
+	    ON: [
+        {
+            event: "tick",
+            handler: ({ body }) => {
+                setTimeout(() => body.define("morph3"), 20);
+            }
+        }
+    ],
+    GUNS: [{
+        POSITION: {
+	         LENGTH: 18,
+             WIDTH: 8,
+             ASPECT: 1,
+             X: 0,
+             Y: 0,
+             ANGLE: 36,
+             DELAY: 0
+	},
+    }]
+}
+Class.morph3 = {
+    PARENT: "basic",
+    LABEL: 'Morph test',
+    UPGRADES_TIER_0: [],
+	    ON: [
+        {
+            event: "tick",
+            handler: ({ body }) => {
+                setTimeout(() => body.define("morph4"), 20);
+            }
+        }
+    ],
+    GUNS: [{
+        POSITION: {
+	         LENGTH: 18,
+             WIDTH: 8,
+             ASPECT: 1,
+             X: 0,
+             Y: 0,
+             ANGLE: 72,
+             DELAY: 0
+	},
+    }]
+}
+
+Class.morph4 = {
+    PARENT: "basic",
+    LABEL: 'Morph test',
+    UPGRADES_TIER_0: [],
+	    ON: [
+        {
+            event: "tick",
+            handler: ({ body }) => {
+                setTimeout(() => body.define("morph5"), 20);
+            }
+        }
+    ],
+    GUNS: [{
+        POSITION: {
+	         LENGTH: 18,
+             WIDTH: 8,
+             ASPECT: 1,
+             X: 0,
+             Y: 0,
+             ANGLE: 108,
+             DELAY: 0
+	},
+    }]
+}
+Class.morph5 = {
+    PARENT: "basic",
+    LABEL: 'Morph test',
+    UPGRADES_TIER_0: [],
+	    ON: [
+        {
+            event: "tick",
+            handler: ({ body }) => {
+                setTimeout(() => body.define("morph6"), 20);
+            }
+        }
+    ],
+    GUNS: [{
+        POSITION: {
+	         LENGTH: 18,
+             WIDTH: 8,
+             ASPECT: 1,
+             X: 0,
+             Y: 0,
+             ANGLE: 144,
+             DELAY: 0
+	},
+    }]
+}
+Class.morph6 = {
+    PARENT: "basic",
+    LABEL: 'Morph test',
+    UPGRADES_TIER_0: [],
+    GUNS: [{
+        POSITION: {
+	         LENGTH: 18,
+             WIDTH: 8,
+             ASPECT: 1,
+             X: 0,
+             Y: 0,
+             ANGLE: 108,
+             DELAY: 0
+	},
+	    PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: 'bullet',
+            IDENTIFIER: 'switcherooGun',
+            ALT_FIRE: true
+        }
+    }]
+}
 Class.switcheroo = {
     PARENT: "basic",
     LABEL: 'Switcheroo',
