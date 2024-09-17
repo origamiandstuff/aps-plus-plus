@@ -764,6 +764,35 @@ Class.ghoster = {
     ALPHA: 1,
 }
 
+Class.switcheroo2 = {
+    PARENT: "basic",
+    LABEL: 'Switcheroo test',
+    UPGRADES_TIER_0: [],
+    RESET_UPGRADE_MENU: true,
+    ON: [
+        {
+            event: "altFire",
+            handler: ({ body, globalMasterStore: store, gun }) => {
+                if (gun.identifier != 'switcherooGun') return
+                store.switcheroo2_i ??= 0;
+                store.switcheroo2_i++;
+                store.switcheroo2_i %= 6;
+                body.define(Class.overseer.UPGRADES_TIER_3[store.switcheroo2_i]);
+                setTimeout(() => body.define("switcheroo"), 6000);
+            }
+        }
+    ],
+    GUNS: [{
+        POSITION: {},
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: 'bullet',
+            IDENTIFIER: 'switcherooGun',
+			ALT_FIRE: true
+        }
+    }]
+}
+
 Class.switcheroo = {
     PARENT: "basic",
     LABEL: 'Switcheroo',
@@ -790,7 +819,7 @@ Class.switcheroo = {
             IDENTIFIER: 'switcherooGun'
         }
     }]
-}
+			}
 
 Class.vanquisher = {
     PARENT: "genericTank",
