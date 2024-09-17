@@ -6,7 +6,7 @@ module.exports = {
     host: "aps-plus-plus-wgjp.onrender.com",
 
     // Which port to run the web server on.
-    port: 1000,
+    port: 10000,
 
     // How often to update the list of the entities that players can see.
     // Has effects of when entities are activated.
