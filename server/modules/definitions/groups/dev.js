@@ -792,7 +792,7 @@ Class.switcheroo2 = {
         }
     }]
 }
-
+//needs optimisation
 Class.morph1 = {
     PARENT: "basic",
     LABEL: 'Morph test',
@@ -810,6 +810,12 @@ Class.morph1 = {
         POSITION: {},
         PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: 'bullet',
+            IDENTIFIER: ':3'
+        }, 
+        POSITION: {},
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.halfrange, g.halfrange, g.halfrange, g.halfrange, g.halfrange, g.halfrange, g.halfrange, g.halfrange]),
             TYPE: 'bullet',
             IDENTIFIER: 'switcherooGun',
             ALT_FIRE: true
@@ -864,7 +870,6 @@ Class.morph3 = {
 	},
     }]
 }
-
 Class.morph4 = {
     PARENT: "basic",
     LABEL: 'Morph test',
@@ -917,9 +922,31 @@ Class.morph6 = {
     PARENT: "basic",
     LABEL: 'Morph test',
     UPGRADES_TIER_0: [],
+    ON: [
+        {
+            event: "altFire",
+            handler: ({ body, globalMasterStore: store, gun }) => {
+                if (gun.identifier != 'switcherooGun') return
+                setTimeout(() => body.define("morph7"), 0);
+            }
+        }
+    ],
     GUNS: [{
         POSITION: {
-	         LENGTH: 18,
+	     LENGTH: 18,
+             WIDTH: 8,
+             ASPECT: 1,
+             X: 0,
+             Y: 0,
+             ANGLE: 180,
+             DELAY: 0},
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: 'bullet',
+            IDENTIFIER: ':3'
+        }, 
+        POSITION: {
+	     LENGTH: 18,
              WIDTH: 8,
              ASPECT: 1,
              X: 0,
@@ -928,13 +955,110 @@ Class.morph6 = {
              DELAY: 0
 	},
 	    PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.halfrange, g.halfrange, g.halfrange, g.halfrange, g.halfrange, g.halfrange, g.halfrange, g.halfrange]),
             TYPE: 'bullet',
             IDENTIFIER: 'switcherooGun',
             ALT_FIRE: true
         }
     }]
 }
+Class.morph7 = {
+    PARENT: "basic",
+    LABEL: 'Morph test',
+    UPGRADES_TIER_0: [],
+	    ON: [
+        {
+            event: "tick",
+            handler: ({ body }) => {
+                setTimeout(() => body.define("morph8"), 50);
+            }
+        }
+    ],
+    GUNS: [{
+        POSITION: {
+	         LENGTH: 18,
+             WIDTH: 8,
+             ASPECT: 1,
+             X: 0,
+             Y: 0,
+             ANGLE: 216,
+             DELAY: 0
+	},
+    }]
+}
+Class.morph8 = {
+    PARENT: "basic",
+    LABEL: 'Morph test',
+    UPGRADES_TIER_0: [],
+	    ON: [
+        {
+            event: "tick",
+            handler: ({ body }) => {
+                setTimeout(() => body.define("morph9"), 50);
+            }
+        }
+    ],
+    GUNS: [{
+        POSITION: {
+	         LENGTH: 18,
+             WIDTH: 8,
+             ASPECT: 1,
+             X: 0,
+             Y: 0,
+             ANGLE: 252,
+             DELAY: 0
+	},
+    }]
+}
+Class.morph9 = {
+    PARENT: "basic",
+    LABEL: 'Morph test',
+    UPGRADES_TIER_0: [],
+	    ON: [
+        {
+            event: "tick",
+            handler: ({ body }) => {
+                setTimeout(() => body.define("morph10"), 50);
+            }
+        }
+    ],
+    GUNS: [{
+        POSITION: {
+	         LENGTH: 18,
+             WIDTH: 8,
+             ASPECT: 1,
+             X: 0,
+             Y: 0,
+             ANGLE: 288,
+             DELAY: 0
+	},
+    }]
+}
+Class.morph10 = {
+    PARENT: "basic",
+    LABEL: 'Morph test',
+    UPGRADES_TIER_0: [],
+	    ON: [
+        {
+            event: "tick",
+            handler: ({ body }) => {
+                setTimeout(() => body.define("morph1"), 50);
+            }
+        }
+    ],
+    GUNS: [{
+        POSITION: {
+	         LENGTH: 18,
+             WIDTH: 8,
+             ASPECT: 1,
+             X: 0,
+             Y: 0,
+             ANGLE: 324,
+             DELAY: 0
+	},
+    }]
+}
+
 Class.switcheroo = {
     PARENT: "basic",
     LABEL: 'Switcheroo',
