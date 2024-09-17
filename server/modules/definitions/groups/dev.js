@@ -824,7 +824,7 @@ Class.morph2 = {
         {
             event: "tick",
             handler: ({ body }) => {
-                setTimeout(() => body.define("morph3"), 20);
+                setTimeout(() => body.define("morph3"), 50);
             }
         }
     ],
@@ -848,7 +848,7 @@ Class.morph3 = {
         {
             event: "tick",
             handler: ({ body }) => {
-                setTimeout(() => body.define("morph4"), 20);
+                setTimeout(() => body.define("morph4"), 50);
             }
         }
     ],
@@ -873,7 +873,7 @@ Class.morph4 = {
         {
             event: "tick",
             handler: ({ body }) => {
-                setTimeout(() => body.define("morph5"), 20);
+                setTimeout(() => body.define("morph5"), 50);
             }
         }
     ],
@@ -897,7 +897,7 @@ Class.morph5 = {
         {
             event: "tick",
             handler: ({ body }) => {
-                setTimeout(() => body.define("morph6"), 20);
+                setTimeout(() => body.define("morph6"), 50);
             }
         }
     ],
@@ -924,7 +924,7 @@ Class.morph6 = {
              ASPECT: 1,
              X: 0,
              Y: 0,
-             ANGLE: 108,
+             ANGLE: 180,
              DELAY: 0
 	},
 	    PROPERTIES: {
