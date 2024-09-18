@@ -804,15 +804,26 @@ Class.morph1 = {
             handler: ({ body, globalMasterStore: store, gun }) => {
                 if (gun.identifier != 'switcherooGun') return
                 setTimeout(() => body.define("morph2"), 0);
+	        setTimeout(() => body.define("morph3"), 50);
+		setTimeout(() => body.define("morph4"), 100);
+	        setTimeout(() => body.define("morph5"), 150);
+		setTimeout(() => body.define("morph6"), 200);
             }
         }
     ],
     GUNS: [{
-        POSITION: {},
+        POSITION: {
+	     LENGTH: 18,
+             WIDTH: 8,
+             ASPECT: 1,
+             X: 0,
+             Y: 0,
+             ANGLE: 0,
+             DELAY: 0
+	},
         PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.basic]),
             TYPE: 'bullet',
-            IDENTIFIER: ':3'
         }, 
         POSITION: {},
         PROPERTIES: {
@@ -827,14 +838,6 @@ Class.morph2 = {
     PARENT: "basic",
     LABEL: 'Morph test',
     UPGRADES_TIER_0: [],
-	    ON: [
-        {
-            event: "tick",
-            handler: ({ body }) => {
-                setTimeout(() => body.define("morph3"), 50);
-            }
-        }
-    ],
     GUNS: [{
         POSITION: {
 	         LENGTH: 18,
@@ -851,14 +854,6 @@ Class.morph3 = {
     PARENT: "basic",
     LABEL: 'Morph test',
     UPGRADES_TIER_0: [],
-	    ON: [
-        {
-            event: "tick",
-            handler: ({ body }) => {
-                setTimeout(() => body.define("morph4"), 50);
-            }
-        }
-    ],
     GUNS: [{
         POSITION: {
 	         LENGTH: 18,
@@ -875,14 +870,6 @@ Class.morph4 = {
     PARENT: "basic",
     LABEL: 'Morph test',
     UPGRADES_TIER_0: [],
-	    ON: [
-        {
-            event: "tick",
-            handler: ({ body }) => {
-                setTimeout(() => body.define("morph5"), 50);
-            }
-        }
-    ],
     GUNS: [{
         POSITION: {
 	         LENGTH: 18,
@@ -899,14 +886,6 @@ Class.morph5 = {
     PARENT: "basic",
     LABEL: 'Morph test',
     UPGRADES_TIER_0: [],
-	    ON: [
-        {
-            event: "tick",
-            handler: ({ body }) => {
-                setTimeout(() => body.define("morph6"), 50);
-            }
-        }
-    ],
     GUNS: [{
         POSITION: {
 	         LENGTH: 18,
@@ -928,7 +907,11 @@ Class.morph6 = {
             event: "altFire",
             handler: ({ body, globalMasterStore: store, gun }) => {
                 if (gun.identifier != 'switcherooGun') return
-                setTimeout(() => body.define("morph7"), 0);
+                setTimeout(() => body.define("morph5"), 0);
+	        setTimeout(() => body.define("morph4"), 50);
+		setTimeout(() => body.define("morph3"), 100);
+	        setTimeout(() => body.define("morph2"), 150);
+		setTimeout(() => body.define("morph1"), 200);
             }
         }
     ],
@@ -961,102 +944,6 @@ Class.morph6 = {
             IDENTIFIER: 'switcherooGun',
             ALT_FIRE: true
         }
-    }]
-}
-Class.morph7 = {
-    PARENT: "basic",
-    LABEL: 'Morph test',
-    UPGRADES_TIER_0: [],
-	    ON: [
-        {
-            event: "tick",
-            handler: ({ body }) => {
-                setTimeout(() => body.define("morph8"), 50);
-            }
-        }
-    ],
-    GUNS: [{
-        POSITION: {
-	         LENGTH: 18,
-             WIDTH: 8,
-             ASPECT: 1,
-             X: 0,
-             Y: 0,
-             ANGLE: 216,
-             DELAY: 0
-	},
-    }]
-}
-Class.morph8 = {
-    PARENT: "basic",
-    LABEL: 'Morph test',
-    UPGRADES_TIER_0: [],
-	    ON: [
-        {
-            event: "tick",
-            handler: ({ body }) => {
-                setTimeout(() => body.define("morph9"), 50);
-            }
-        }
-    ],
-    GUNS: [{
-        POSITION: {
-	         LENGTH: 18,
-             WIDTH: 8,
-             ASPECT: 1,
-             X: 0,
-             Y: 0,
-             ANGLE: 252,
-             DELAY: 0
-	},
-    }]
-}
-Class.morph9 = {
-    PARENT: "basic",
-    LABEL: 'Morph test',
-    UPGRADES_TIER_0: [],
-	    ON: [
-        {
-            event: "tick",
-            handler: ({ body }) => {
-                setTimeout(() => body.define("morph10"), 50);
-            }
-        }
-    ],
-    GUNS: [{
-        POSITION: {
-	         LENGTH: 18,
-             WIDTH: 8,
-             ASPECT: 1,
-             X: 0,
-             Y: 0,
-             ANGLE: 288,
-             DELAY: 0
-	},
-    }]
-}
-Class.morph10 = {
-    PARENT: "basic",
-    LABEL: 'Morph test',
-    UPGRADES_TIER_0: [],
-	    ON: [
-        {
-            event: "tick",
-            handler: ({ body }) => {
-                setTimeout(() => body.define("morph1"), 50);
-            }
-        }
-    ],
-    GUNS: [{
-        POSITION: {
-	         LENGTH: 18,
-             WIDTH: 8,
-             ASPECT: 1,
-             X: 0,
-             Y: 0,
-             ANGLE: 324,
-             DELAY: 0
-	},
     }]
 }
 
