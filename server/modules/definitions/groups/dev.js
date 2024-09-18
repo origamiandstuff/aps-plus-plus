@@ -778,7 +778,8 @@ Class.switcheroo2 = {
                 store.switcheroo2_i++;
                 store.switcheroo2_i %= 6;
                 body.define(Class.overseer.UPGRADES_TIER_3[store.switcheroo2_i]);
-                setTimeout(() => body.define("switcheroo2"), 6000);
+                setTimeout(() => body.define("switcheroo2"), 500);
+		setTimeout(() => body.define("basic"), 1000);
             }
         }
     ],
