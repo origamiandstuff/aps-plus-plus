@@ -348,6 +348,24 @@ Class.icosahedron = {
     DRAW_HEALTH: true,
     GIVE_KILL_MESSAGE: true,
 };
+Class.smallrhombicuboctohedron = {
+    PARENT: "food",
+    LABEL: "The Small Rhombicuboctohedron",
+    VALUE: 2e8,
+    SIZE: 20,
+    COLOR: "egg",
+    SHAPE: "[[2.6,-1.02],[2.6,1.01],[1,0.99],[-0.994,1],[-1,-1],[2.6,-1.02],[-2.59,-1],[-2.59,1],[-1,0.99],[-1.01,2.59],[1,2.59],[0.99,-2.61],[-1.01,-2.62],[-1,-1],[-1.02,-2.63],[-2.6,-1],[-2.6,1],[-1,2.6],[1,2.58],[2.6,1],[2.62,-1.02],[2.6,-1],[0.98,-2.6]]",
+    BODY: {
+        DAMAGE: 20,
+        DENSITY: 60,
+        HEALTH: 500,
+        RESIST: 3,
+        PENETRATION: 35,
+        ACCELERATION: 0.002
+    },
+    DRAW_HEALTH: true,
+    GIVE_KILL_MESSAGE: true,
+};
 
 // RELICS
 for (let [gemColor, name] of [
